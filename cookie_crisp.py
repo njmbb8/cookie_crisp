@@ -3,14 +3,10 @@
 import sys, argparse, requests
 
 def main(argv):
-    value_file = ''
-    cookie_file = ''
-    url = ''
-    
     arg_parser = argparse.ArgumentParser()
-    arg_parser.add_argument('-u', type=str, required=True)
-    arg_parser.add_argument('-c', type=str, required=True)
-    arg_parser.add_argument('-v', type=str, required=True)
+    arg_parser.add_argument('-u', type=str, help="URL to test against", required=True)
+    arg_parser.add_argument('-c', type=str, help="Wordlist to pull cookies from", required=True)
+    arg_parser.add_argument('-v', type=str, help="Wordlist to pull values from", required=True)
     args = arg_parser.parse_args()
 
     with open(args.c, 'r') as file:
