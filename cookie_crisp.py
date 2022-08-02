@@ -3,7 +3,10 @@
 import sys, argparse, requests
 
 def main(argv):
-    arg_parser = argparse.ArgumentParser()
+    arg_parser = argparse.ArgumentParser(prog='Cookie Crisp', 
+                                            description='Script to bruteforce cookies',
+                                            usage='cookie_crisp.py -u <URL> -c <Path to cookie wordlist> -v <Path to file containing values>'
+                                            )
     arg_parser.add_argument('-u', type=str, help="URL to test against", required=True)
     arg_parser.add_argument('-c', type=str, help="Wordlist to pull cookies from", required=True)
     arg_parser.add_argument('-v', type=str, help="Wordlist to pull values from", required=True)
